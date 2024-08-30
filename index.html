@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRT Peshawar Fare Calculator</title>
+</head>
+<body>
+    <h1>BRT Peshawar Fare Calculator</h1>
+    <label for="startStation">Start Station:</label>
+    <input type="text" id="startStation" placeholder="University Road, Saddar, Hayatabad"><br><br>
+
+    <label for="endStation">End Station:</label>
+    <input type="text" id="endStation" placeholder="University Road, Saddar, Hayatabad"><br><br>
+
+    <button onclick="calculateFare()">Calculate Fare</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateFare() {
+            let startStation = document.getElementById("startStation").value;
+            let endStation = document.getElementById("endStation").value;
+            let result = "";
+
+            if (startStation === "University Road" && endStation === "Saddar") {
+                result = "Go to Station B. Fare: 20 PKR";
+            } else if (startStation === "Saddar" && endStation === "Hayatabad") {
+                result = "Go to Station C. Fare: 30 PKR";
+            } else if (startStation === "University Road" && endStation === "Hayatabad") {
+                result = "Go to Station C. Fare: 40 PKR";
+            } else {
+                result = "Invalid route, please check your stations";
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>
